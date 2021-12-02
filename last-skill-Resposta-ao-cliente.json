@@ -1,0 +1,3400 @@
+{
+  "name": "Resposta ao cliente",
+  "type": "dialog",
+  "status": "Available",
+  "created": "2021-05-19T18:41:59.101Z",
+  "updated": "2021-12-01T19:23:52.295Z",
+  "language": "pt-br",
+  "skill_id": "a3fb902b-cca3-448e-9f76-134f650707c7",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_462",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Se tiver dúvidas solicite uma demonstração da solução."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "testar outra solução.",
+                      "value": {
+                        "input": {
+                          "text": "testar outra solução."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I didn't catch that. Select a valid option:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I'm afraid I don't understand. Let me see if I can help another way."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_11552_step_462_entity_44498",
+              "free_text": false,
+              "max_tries": 3,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_6922",
+                "parameters": null,
+                "result_variable": "step_462_result_1"
+              }
+            },
+            "variable": "step_462"
+          },
+          {
+            "step": "step_673",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Gostaria de testar o aplicativo Ponto Soft Mobile?!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor.",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "quer realmente saber sobre isso?"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_11552_step_673_entity_19866",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_673",
+            "next_step": "step_878"
+          },
+          {
+            "step": "step_778",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Passo 02: Faço login com nosso usuário de demonstração.\nLogin: usuario@insoft4.com.br | Senha: demo"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_778",
+            "next_step": "step_462"
+          },
+          {
+            "step": "step_878",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Certo, faça os seguintes passos:\n\nO1: baixar o aplicativo para sua plataforma.\nAndroid: https://bit.ly/3famtIk\n       IOS:  https://apple.co/2QF8O2F"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_878",
+            "next_step": "step_778"
+          }
+        ],
+        "title": "Demonstração",
+        "action": "action_11552",
+        "handlers": [],
+        "condition": {
+          "intent": "action_11552_intent_11810"
+        },
+        "variables": [
+          {
+            "title": "Se tiver dúvidas solicite uma demonstração da solução.",
+            "variable": "step_462",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_462_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Gostaria de testar o aplicativo Ponto Soft Mobile?!",
+            "variable": "step_673",
+            "data_type": "any"
+          },
+          {
+            "title": "Passo 02: Faço login com nosso usuário de demonstração. Login: u",
+            "variable": "step_778",
+            "data_type": "any"
+          },
+          {
+            "title": "Certo, faça os seguintes passos: O1: baixar o aplicativo para su",
+            "variable": "step_878",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_38958",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_660",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "O Ponto Soft Mobile é uma solução complementar do sistema Ponto Soft destinado à marcação de Ponto através de dispositivos móveis (Android/IOS). Focado em empresas que necessitam realizar a gestão do ponto de colaboradores e prestadores de serviços em campo, home office ou em trânsito, de maneira eficaz e permitido pela portaria 373 de 2011 do MTE,"
+                          },
+                          {
+                            "scalar": " mediante autorização por convenção ou acordo coletivo de trabalho,como para instituições não sujeitas ao regime da CLT.\nSaiba mais: https://bit.ly/3fz6Jhj"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_660"
+          },
+          {
+            "step": "step_818",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "você gostaria de saber sobre nosso opção para dispositivos moveis o Ponto Soft Mobile (android/IOS) ?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor.",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_12789_step_818_entity_39380",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_818",
+            "next_step": "step_660"
+          }
+        ],
+        "title": "Sistema Ponto Soft Mobile",
+        "action": "action_12789",
+        "handlers": [],
+        "condition": {
+          "intent": "action_12789_intent_1697"
+        },
+        "variables": [
+          {
+            "variable": "step_462_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "O Ponto Soft Mobile é uma solução complementar do sistema Ponto ",
+            "variable": "step_660",
+            "data_type": "any"
+          },
+          {
+            "title": "você gostaria de saber sobre nosso opção para dispositivos movei",
+            "variable": "step_818",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_33049",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_102",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "A Insoft4 é uma empresa com mais de 21 anos de mercado, especializada no desenvolvimento de sistemas para controle de ponto, acesso e segurança e gestão de terceiros. Em seu know how está a experiência na integração de sistemas em diversas empresas no cenário nacional, isso possibilita trazer ao mercado um conjunto de soluções entre softwares e equipamentos,"
+                          },
+                          {
+                            "scalar": " que se integram perfeitamente às necessidades de seus clientes, oferecendo segurança, alta performance e simplicidade em suas operações."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_102",
+            "next_step": "step_986"
+          },
+          {
+            "step": "step_986",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "veja alguns cases e feedbacks de nossos clientes: \nhttps://www.insoft4.com.br/cases/"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_986"
+          }
+        ],
+        "title": "Informações básicas",
+        "action": "action_17099",
+        "handlers": [],
+        "condition": {
+          "intent": "action_17099_intent_27468"
+        },
+        "variables": [
+          {
+            "title": "A Insoft4 é uma empresa com mais de 21 anos de mercado, especial",
+            "variable": "step_102",
+            "data_type": "any"
+          },
+          {
+            "title": "veja alguns cases e feedbacks de nossos clientes: https://www.in",
+            "variable": "step_986",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_19191",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_293",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "certo o produto ideal para você é nosso versão Ponto Soft Avançado! Pode começar testando ela e depois se desejar trocamos o plano para você. Veja mais informações: https://bit.ly/3fz6Jhj"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_293",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_512"
+                },
+                {
+                  "value": "1-40",
+                  "from_entity": "action_17549_step_512_entity_17463"
+                }
+              ]
+            },
+            "next_step": "step_359"
+          },
+          {
+            "step": "step_304",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "certo o produto ideal para você é nosso versão Ponto Soft Básica! Pode começar testando ela e depois se desejar trocamos o plano para você. Veja mais informações: https://bit.ly/3fz6Jhj"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_304",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_512"
+                },
+                {
+                  "value": "1-30",
+                  "from_entity": "action_17549_step_512_entity_17463"
+                }
+              ]
+            },
+            "next_step": "step_293"
+          },
+          {
+            "step": "step_359",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "certo o produto ideal para você é nosso versão Ponto Soft Enterprise! Pode começar testando ela e depois se desejar trocamos o plano para você. Veja mais informações: https://bit.ly/3fz6Jhj"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_359",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_512"
+                },
+                {
+                  "value": "+50",
+                  "from_entity": "action_17549_step_512_entity_17463"
+                }
+              ]
+            }
+          },
+          {
+            "step": "step_512",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Por favor responda:\nQuantos funcionários atualmente sua empresa possui hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "1-5",
+                      "value": {
+                        "input": {
+                          "text": "1-5"
+                        }
+                      }
+                    },
+                    {
+                      "label": "1-30",
+                      "value": {
+                        "input": {
+                          "text": "1-30"
+                        }
+                      }
+                    },
+                    {
+                      "label": "1-40",
+                      "value": {
+                        "input": {
+                          "text": "1-40"
+                        }
+                      }
+                    },
+                    {
+                      "label": "+50",
+                      "value": {
+                        "input": {
+                          "text": "+50"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I didn't catch that. Select a valid option:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I'm afraid I don't understand. Let me see if I can help another way."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_17549_step_512_entity_17463",
+              "max_tries": 3,
+              "only_populate_when_prompted": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_512",
+            "next_step": "step_697"
+          },
+          {
+            "step": "step_679",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "certo, você já possui ou utiliza algum sistema de controle de ponto hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "only_populate_when_prompted": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_679",
+            "next_step": "step_512"
+          },
+          {
+            "step": "step_697",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "certo o produto ideal para você é nosso versão Ponto Soft Básica! Pode começar testando ela e depois se desejar trocamos o plano para você. Veja mais informações: https://bit.ly/3fz6Jhj"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_697",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_512"
+                },
+                {
+                  "value": "1-5",
+                  "from_entity": "action_17549_step_512_entity_17463"
+                }
+              ]
+            },
+            "next_step": "step_304"
+          }
+        ],
+        "title": "Indicar produto",
+        "action": "action_17549",
+        "handlers": [],
+        "condition": {
+          "intent": "action_17549_intent_35081"
+        },
+        "variables": [
+          {
+            "title": "certo o produto ideal para você é nosso versão Ponto Soft Avança",
+            "variable": "step_293",
+            "data_type": "any"
+          },
+          {
+            "title": "certo o produto ideal para você é nosso versão Ponto Soft Básica",
+            "variable": "step_304",
+            "data_type": "any"
+          },
+          {
+            "title": "certo o produto ideal para você é nosso versão Ponto Soft Enterp",
+            "variable": "step_359",
+            "data_type": "any"
+          },
+          {
+            "title": "Por favor responda: Quantos funcionários atualmente sua empresa ",
+            "variable": "step_512",
+            "data_type": "any"
+          },
+          {
+            "title": "certo, você já possui ou utiliza algum sistema de controle de po",
+            "variable": "step_679",
+            "data_type": "any"
+          },
+          {
+            "title": "certo o produto ideal para você é nosso versão Ponto Soft Básica",
+            "variable": "step_697",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_9412",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_396",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "O Ponto pode ser acessado através do smartphone, computador ou tablet. Para os colaboradores, funciona como um cartão ponto online. As marcações de ponto podem ser feitas com ou sem conexão à internet. \n‍ \nPara os gestores e o RH, existe uma visão modo gestor(a) de jornada que otimiza aprovações, justificativa e relatórios! Lhe garante maior praticidade no dia a dia."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_396"
+          }
+        ],
+        "title": "Funcionamento Info",
+        "action": "action_19191",
+        "handlers": [],
+        "condition": {
+          "intent": "action_19191_intent_23203"
+        },
+        "variables": [
+          {
+            "title": "O Ponto pode ser acessado através do smartphone, computador ou t",
+            "variable": "step_396",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_4779",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_758",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Fico a disposição para lhe ajudar caso tenha mais alguma dúvida referente aos produtos e serviços do Grupo Insoft4."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_758",
+            "next_step": "step_923"
+          },
+          {
+            "step": "step_923",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "O Grupo Insoft4 agradece pelo seu contato."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_923"
+          }
+        ],
+        "title": "Agradecimento",
+        "action": "action_21026",
+        "handlers": [],
+        "condition": {
+          "intent": "action_21026_intent_15782"
+        },
+        "variables": [
+          {
+            "title": "Fico a disposição para lhe ajudar caso tenha mais alguma dúvida ",
+            "variable": "step_758",
+            "data_type": "any"
+          },
+          {
+            "title": "O Grupo Insoft4 agradece pelo seu contato.",
+            "variable": "step_923",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_17099",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_859",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Ok, estou lhe direcionando para nosso consultor comercial.\n\nAcessar contato direto via whatsapp: https://bit.ly/3x0SkRr"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_859"
+          }
+        ],
+        "title": "Falar com atendente",
+        "action": "action_22283",
+        "handlers": [],
+        "condition": {
+          "intent": "action_22283_intent_13703"
+        },
+        "variables": [
+          {
+            "title": "Ok, estou lhe direcionando para nosso consultor comercial. Acess",
+            "variable": "step_859",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_47846",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_205",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Ah essa é simples de responder."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_205",
+            "next_step": "step_348"
+          },
+          {
+            "step": "step_348",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "A resposta para a vida, o universo e tudo mais é...  42."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_348",
+            "next_step": "step_429"
+          },
+          {
+            "step": "step_429",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "E isso é tudo que tenho a dizer sobre esse assunto."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_429"
+          }
+        ],
+        "title": "Origem do universo",
+        "action": "action_30004",
+        "handlers": [],
+        "condition": {
+          "intent": "action_30004_intent_36107"
+        },
+        "variables": [
+          {
+            "title": "Ah essa é simples de responder.",
+            "variable": "step_205",
+            "data_type": "any"
+          },
+          {
+            "title": "A resposta para a vida, o universo e tudo mais é... 42.",
+            "variable": "step_348",
+            "data_type": "any"
+          },
+          {
+            "title": "E isso é tudo que tenho a dizer sobre esse assunto.",
+            "variable": "step_429",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_21026",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_109",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Gostaria de saber mais informações sobre o sistema Ponto Soft?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor.",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_31963_step_109_entity_20400",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_109",
+            "next_step": "step_906"
+          },
+          {
+            "step": "step_906",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "O Ponto Soft é um dos sistemas de ponto eletrônico mais completos do mercado. São aproximadamente 350 telas de sistema, 300 relatórios prontos, e uma infinidade de relatórios que podem ser gerados através de uma ferramenta própria, todos eles disponíveis em tela, excel, pdf, csv. Além disso, também possui funcionalidades automáticas desenvolvidas direto no banco de dados.\nSaiba mais em: bit."
+                          },
+                          {
+                            "scalar": "ly/3f5zTWd"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_906"
+          }
+        ],
+        "title": "Produto ponto ",
+        "action": "action_31963",
+        "handlers": [],
+        "condition": {
+          "intent": "action_31963_intent_7294"
+        },
+        "variables": [
+          {
+            "title": "Gostaria de saber mais informações sobre o sistema Ponto Soft?",
+            "variable": "step_109",
+            "data_type": "any"
+          },
+          {
+            "title": "O Ponto Soft é um dos sistemas de ponto eletrônico mais completo",
+            "variable": "step_906",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_6922",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_384",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Auxiliamos nas soluções para os problemas do seu dia a dia, sempre apoiando os clientes com uma equipe especializada em cada produto, para resolver as situações com agilidade e flexibilidade."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Gostaria de abrir um chamado.",
+                      "value": {
+                        "input": {
+                          "text": "Gostaria de abrir um chamado."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_33049_step_384_entity_17367",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_384",
+            "next_step": "step_695"
+          },
+          {
+            "step": "step_695",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "A Central do Cliente conta com funcionalidades para facilitar o gerenciamento dos seus dados, chamados e projetos. A partir do seu portal Central do Cliente você realizar o acompanhamento dos projetos de sua empresa. Não possui acesso ainda? Solicite acesso pelo nosso suporte técnico.\nLink para central do cliente: https://bit.ly/2SXS4Ez"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_695"
+          }
+        ],
+        "title": "Central do cliente",
+        "action": "action_33049",
+        "handlers": [],
+        "condition": {
+          "intent": "action_33049_intent_2006"
+        },
+        "variables": [
+          {
+            "title": "Auxiliamos nas soluções para os problemas do seu dia a dia, semp",
+            "variable": "step_384",
+            "data_type": "any"
+          },
+          {
+            "title": "A Central do Cliente conta com funcionalidades para facilitar o ",
+            "variable": "step_695",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_3661",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_375",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Veja mais informações em nossa política de privacidade no link: https://bit.ly/344rPik"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_375"
+          },
+          {
+            "step": "step_851",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "você gostaria de informações do referente a lei geral de proteção de dados (LGPD)?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor.",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_3661_step_851_entity_44284",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_851",
+            "next_step": "step_375"
+          }
+        ],
+        "title": "Informações LGPD",
+        "action": "action_3661",
+        "handlers": [],
+        "condition": {
+          "intent": "action_3661_intent_38037"
+        },
+        "variables": [
+          {
+            "title": "Veja mais informações em nossa política de privacidade no link: ",
+            "variable": "step_375",
+            "data_type": "any"
+          },
+          {
+            "title": "você gostaria de informações do referente a lei geral de proteçã",
+            "variable": "step_851",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_4571",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_467",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Você gostaria de informações sobre o Akita Soft?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_37396_step_467_entity_37660",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_467",
+            "next_step": "step_914"
+          },
+          {
+            "step": "step_914",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Com o Akita Soft você tem à disposição um robusto sistema de controle de acesso de pessoas, veículos e objetos em sua empresa ou condomínio.\nInspirado nos cães da raça Akita, este sistema tem em seu DNA as características de um verdadeiro cão de guarda: protetor, amigo e confiável.\nCom uma interface intuitiva, desenvolvida com padrões de usabilidade baseados em normas\nISO 9241 e ISO 13407,"
+                          },
+                          {
+                            "scalar": " e através da integração com aplicação mobile, o Akita Soft coloca a sua disposição o acesso às informações onde e quando você quiser.\nSaber mais sobre: https://bit.ly/3hOsEn8"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_914"
+          }
+        ],
+        "title": "Sistema Akita",
+        "action": "action_37396",
+        "handlers": [],
+        "condition": {
+          "intent": "action_37396_intent_19207"
+        },
+        "variables": [
+          {
+            "variable": "step_462_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Você gostaria de informações sobre o Akita Soft?",
+            "variable": "step_467",
+            "data_type": "any"
+          },
+          {
+            "title": "Com o Akita Soft você tem à disposição um robusto sistema de con",
+            "variable": "step_914",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_22283",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_131",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Gostaria de saber também o endereço?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_38958_step_131_entity_15510",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_131",
+            "next_step": "step_986"
+          },
+          {
+            "step": "step_152",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Gostaria de saber os horários de atendimento da Insoft4?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor.",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_38958_step_152_entity_16597",
+              "free_text": false,
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_152",
+            "next_step": "step_766"
+          },
+          {
+            "step": "step_766",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Horário de entendimento: 8h às 12h e das 13h às 17:30h"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_766",
+            "next_step": "step_131"
+          },
+          {
+            "step": "step_986",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "AV. JOÃO CORRÊA, 1615\nSALA 03 - CENTRO - SAPIRANGA\nRIO GRANDE DO SUL"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_986"
+          }
+        ],
+        "title": "Horários de atendimento",
+        "action": "action_38958",
+        "handlers": [],
+        "condition": {
+          "intent": "action_38958_intent_43903"
+        },
+        "variables": [
+          {
+            "title": "Gostaria de saber também o endereço?",
+            "variable": "step_131",
+            "data_type": "any"
+          },
+          {
+            "title": "Gostaria de saber os horários de atendimento da Insoft4?",
+            "variable": "step_152",
+            "data_type": "any"
+          },
+          {
+            "title": "Horário de entendimento: 8h às 12h e das 13h às 17:30h",
+            "variable": "step_766",
+            "data_type": "any"
+          },
+          {
+            "title": "AV. JOÃO CORRÊA, 1615 SALA 03 - CENTRO - SAPIRANGA RIO GRANDE DO",
+            "variable": "step_986",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_12789",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_145",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Certo, com que tipo de informação posso lhe ajudar?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_145"
+          }
+        ],
+        "title": "Iniciar conversa",
+        "action": "action_4571",
+        "handlers": [],
+        "condition": {
+          "intent": "action_4571_intent_3987"
+        },
+        "variables": [
+          {
+            "title": "Certo, com que tipo de informação posso lhe ajudar?",
+            "variable": "step_145",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_37396",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_924",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "entendi, deseja iniciar a etapa compra?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor.",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "caso você tenha interesse selecione a opção indicada abaixo."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "certo, tentarei lhe ajudar de outra maneira."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_4779_step_924_entity_20112",
+              "max_tries": 2,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_22283",
+                "parameters": null,
+                "result_variable": "step_924_result_1"
+              }
+            },
+            "variable": "step_924"
+          }
+        ],
+        "title": "Comprar",
+        "action": "action_4779",
+        "handlers": [],
+        "condition": {
+          "intent": "action_4779_intent_40890"
+        },
+        "variables": [
+          {
+            "variable": "step_462_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "entendi, deseja iniciar a etapa compra?",
+            "variable": "step_924",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_924_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_11552",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_376",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, sou o assistente virtual da Insoft4, irei lhe ajudar. Tudo bem?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_376"
+          }
+        ],
+        "title": "Saudações",
+        "action": "action_47846",
+        "handlers": [],
+        "condition": {
+          "intent": "action_47846_intent_6160"
+        },
+        "variables": [
+          {
+            "title": "Olá, sou o assistente virtual da Insoft4, irei lhe ajudar. Tudo ",
+            "variable": "step_376",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_462_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_8713",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_547",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, claro podemos agendar uma reunião para que possamos lhe apresentar as soluções do Grupo Insoft4."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Sim, gostaria de agendar.",
+                      "value": {
+                        "input": {
+                          "text": "Sim, gostaria de agendar."
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "Você pode agendar uma apresentação :"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "https://url.gratis/uNtErl"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_6922_step_547_entity_42055",
+              "free_text": false,
+              "max_tries": 1,
+              "only_populate_when_prompted": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_547",
+            "next_step": "step_581"
+          },
+          {
+            "step": "step_581",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá você pode agendar um atendimento através deste link: https://bit.ly/2V0AnFt"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_581"
+          }
+        ],
+        "title": "Agendar reunião",
+        "action": "action_6922",
+        "handlers": [],
+        "condition": {
+          "intent": "action_6922_intent_8940"
+        },
+        "variables": [
+          {
+            "title": "Olá, claro podemos agendar uma reunião para que possamos lhe apr",
+            "variable": "step_547",
+            "data_type": "any"
+          },
+          {
+            "title": "Olá você pode agendar um atendimento através deste link: https:/",
+            "variable": "step_581",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_371",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "saiba mais sobre o sistema gestão de terceiros\nacessar link: https://bit.ly/3u0Owy9"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_371"
+          },
+          {
+            "step": "step_681",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "O GT Soft é um sistema totalmente web destinado à Gestão de Terceiros. Focado em empresas que necessitam realizar a gestão dos prestadores de serviços de maneira simples, eficaz e de acordo com os requisitos legais.\nA tecnologia de gerenciamento dos documentos é realizado através do GT Soft, em sistema WEB com servidor dedicado para esta aplicação. Pode ser acessado em qualquer computador,"
+                          },
+                          {
+                            "scalar": " tablet ou smartphone, que tenha acesso à Internet e atendam os requisitos mínimos necessários."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_681",
+            "next_step": "step_371"
+          },
+          {
+            "step": "step_886",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Você gostaria de saber um pouco mais sobre o Sistema de gestão de terceiros GTSOFT ?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "sim, por favor",
+                      "value": {
+                        "input": {
+                          "text": "sim, por favor"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I didn't catch that. Select a valid option:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I'm afraid I don't understand. Let me see if I can help another way."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_8713_step_886_entity_44333",
+              "max_tries": 3,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_886",
+            "next_step": "step_681"
+          }
+        ],
+        "title": "Sistema Gestão de terceiro",
+        "action": "action_8713",
+        "handlers": [],
+        "condition": {
+          "intent": "action_8713_intent_34132"
+        },
+        "variables": [
+          {
+            "title": "saiba mais sobre o sistema gestão de terceiros acessar link: htt",
+            "variable": "step_371",
+            "data_type": "any"
+          },
+          {
+            "title": "O GT Soft é um sistema totalmente web destinado à Gestão de Terc",
+            "variable": "step_681",
+            "data_type": "any"
+          },
+          {
+            "title": "Você gostaria de saber um pouco mais sobre o Sistema de gestão d",
+            "variable": "step_886",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_31963",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_962",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá meu nome é Marvin, você está falando com um chatbot."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_962"
+          }
+        ],
+        "title": "Eu robo",
+        "action": "action_9412",
+        "handlers": [],
+        "condition": {
+          "intent": "action_9412_intent_42527"
+        },
+        "variables": [
+          {
+            "title": "Olá meu nome é Marvin, você está falando com um chatbot.",
+            "variable": "step_962",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_30004",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Desculpe, não consegui entender o que você está perguntando, por favor, reformule sua pergunta."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Retry when no action matches",
+        "action": "anything_else",
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "Desculpe, não consegui entender o que você está perguntando, por",
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, sou o assiste virtual do Grupo Insoft4 como posso ajudá-lo(a)?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "Olá, sou o assiste virtual do Grupo Insoft4 como posso ajudá-lo(",
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_17549",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_11552_intent_11810",
+        "examples": [
+          {
+            "text": "como acesso a demonstração do mobile"
+          },
+          {
+            "text": "conta de demonstração"
+          },
+          {
+            "text": "demonstração mobile"
+          },
+          {
+            "text": "login para teste"
+          },
+          {
+            "text": "perfil de teste"
+          },
+          {
+            "text": "Posso testar o aplicativo"
+          },
+          {
+            "text": "testar ponto soft mobile"
+          },
+          {
+            "text": "uso android"
+          },
+          {
+            "text": "uso IOS"
+          }
+        ]
+      },
+      {
+        "intent": "action_12789_intent_1697",
+        "examples": [
+          {
+            "text": "aplicativo de telefone"
+          },
+          {
+            "text": "aplicativo mobile"
+          },
+          {
+            "text": "celular"
+          },
+          {
+            "text": "dispositivo móvel"
+          },
+          {
+            "text": "fullface"
+          },
+          {
+            "text": "mobile"
+          },
+          {
+            "text": "portabilidade"
+          },
+          {
+            "text": "qrcode"
+          },
+          {
+            "text": "reconhecimento facial"
+          },
+          {
+            "text": "sobre o modulo mobile do sistema"
+          },
+          {
+            "text": "sobre o ponto soft mobile"
+          },
+          {
+            "text": "tablets e celular"
+          }
+        ]
+      },
+      {
+        "intent": "action_17099_intent_27468",
+        "examples": [
+          {
+            "text": "cases da empresa"
+          },
+          {
+            "text": "dados da empresa"
+          },
+          {
+            "text": "Informações da empresa"
+          },
+          {
+            "text": "inosft"
+          },
+          {
+            "text": "sobre a insoft4"
+          },
+          {
+            "text": "sobre nos"
+          }
+        ]
+      },
+      {
+        "intent": "action_17549_intent_35081",
+        "examples": [
+          {
+            "text": "ajudar a escolher"
+          },
+          {
+            "text": "escolher um plano"
+          },
+          {
+            "text": "não qual a melhor opção para mim"
+          },
+          {
+            "text": "não sei qual escolher"
+          },
+          {
+            "text": "pode me indicar produto?"
+          },
+          {
+            "text": "qual diferença entre eles?"
+          }
+        ]
+      },
+      {
+        "intent": "action_19191_intent_23203",
+        "examples": [
+          {
+            "text": "Como funciona o controle de ponto online?"
+          },
+          {
+            "text": "funciona pelo celular?"
+          },
+          {
+            "text": "funciona pelo computador?"
+          },
+          {
+            "text": "online e offline"
+          }
+        ]
+      },
+      {
+        "intent": "action_21026_intent_15782",
+        "examples": [
+          {
+            "text": "agradecimento"
+          },
+          {
+            "text": "fico grato"
+          },
+          {
+            "text": "muito obrigado"
+          },
+          {
+            "text": "muito obrigado pela ajuda"
+          },
+          {
+            "text": "obrigado"
+          },
+          {
+            "text": "sou grato"
+          }
+        ]
+      },
+      {
+        "intent": "action_22283_intent_13703",
+        "examples": [
+          {
+            "text": "ajuda urgente"
+          },
+          {
+            "text": "Falar com atendente"
+          },
+          {
+            "text": "falar com humano"
+          },
+          {
+            "text": "falar com uma pessoa"
+          },
+          {
+            "text": "quero falar com alguém agora"
+          },
+          {
+            "text": "quero falar com uma pessoa de verdade"
+          }
+        ]
+      },
+      {
+        "intent": "action_30004_intent_36107",
+        "examples": [
+          {
+            "text": "a questão fundamental"
+          },
+          {
+            "text": "e qual é a resposta de tudo?"
+          },
+          {
+            "text": "qual a origem do universo"
+          },
+          {
+            "text": "Qual a resposta para a vida, o universo e tudo mais?"
+          },
+          {
+            "text": "qual a resposta para o universo?"
+          },
+          {
+            "text": "qual o significado da vida?"
+          }
+        ]
+      },
+      {
+        "intent": "action_31963_intent_7294",
+        "examples": [
+          {
+            "text": "Controle de ponto de funcionário"
+          },
+          {
+            "text": "emissão de ponto"
+          },
+          {
+            "text": "Pode me falar sobre o Ponto ?"
+          },
+          {
+            "text": "ponto"
+          },
+          {
+            "text": "Ponto para empresas"
+          },
+          {
+            "text": "Ponto Soft Express"
+          },
+          {
+            "text": "Quais os planos do software de ponto?"
+          },
+          {
+            "text": "Qual é o sistema de ponto de vocês?"
+          },
+          {
+            "text": "Sistema de ponto"
+          },
+          {
+            "text": "sobre ponto"
+          }
+        ]
+      },
+      {
+        "intent": "action_33049_intent_2006",
+        "examples": [
+          {
+            "text": "central do cliente"
+          },
+          {
+            "text": "chamado"
+          },
+          {
+            "text": "problema no sistema"
+          },
+          {
+            "text": "suporte"
+          },
+          {
+            "text": "suporte técnico"
+          }
+        ]
+      },
+      {
+        "intent": "action_3661_intent_38037",
+        "examples": [
+          {
+            "text": "como funciona a Lei de proteção de dados"
+          },
+          {
+            "text": "falar com dpo"
+          },
+          {
+            "text": "informações pessoais"
+          },
+          {
+            "text": "LGPD"
+          },
+          {
+            "text": "POLÍTICA DE PRIVACIDADE"
+          },
+          {
+            "text": "proteger a sua privacidade"
+          },
+          {
+            "text": "remover dados da plataforma"
+          },
+          {
+            "text": "Sobre a LGPD"
+          }
+        ]
+      },
+      {
+        "intent": "action_37396_intent_19207",
+        "examples": [
+          {
+            "text": "Agenda e liberação de visitantes através do Outlook da Microsoft"
+          },
+          {
+            "text": "Akita Soft"
+          },
+          {
+            "text": "Controle de acesso"
+          },
+          {
+            "text": "controle de acesso de pessoas"
+          },
+          {
+            "text": "Controle de acesso de veículos"
+          },
+          {
+            "text": "Segurança"
+          },
+          {
+            "text": "Sistema Akita"
+          },
+          {
+            "text": "sistema de acesso"
+          },
+          {
+            "text": "Sistema de segurança"
+          },
+          {
+            "text": "sobre acesso"
+          },
+          {
+            "text": "solução de acesso e segurança"
+          },
+          {
+            "text": "Solução de Autoatendimento de visitantes"
+          }
+        ]
+      },
+      {
+        "intent": "action_38958_intent_43903",
+        "examples": [
+          {
+            "text": "entendimento comercial"
+          },
+          {
+            "text": "horário de funcionamento"
+          },
+          {
+            "text": "horários de atendimento"
+          },
+          {
+            "text": "onde fica a Insoft4"
+          }
+        ]
+      },
+      {
+        "intent": "action_4571_intent_3987",
+        "examples": [
+          {
+            "text": "ajudar cliente"
+          },
+          {
+            "text": "certo"
+          },
+          {
+            "text": "certo vamos la"
+          },
+          {
+            "text": "minha dúvida"
+          },
+          {
+            "text": "ok"
+          },
+          {
+            "text": "responder dúvida"
+          },
+          {
+            "text": "tudo"
+          },
+          {
+            "text": "tudo bem"
+          },
+          {
+            "text": "tudo certo"
+          },
+          {
+            "text": "vamos la"
+          }
+        ]
+      },
+      {
+        "intent": "action_4779_intent_40890",
+        "examples": [
+          {
+            "text": "conhecer o produto"
+          },
+          {
+            "text": "desejo comprar"
+          },
+          {
+            "text": "quer fechar com"
+          },
+          {
+            "text": "quero adquirir"
+          },
+          {
+            "text": "quero a solução"
+          },
+          {
+            "text": "quero contratar"
+          },
+          {
+            "text": "vendedor"
+          }
+        ]
+      },
+      {
+        "intent": "action_47846_intent_6160",
+        "examples": [
+          {
+            "text": "boa noite"
+          },
+          {
+            "text": "boa tarde"
+          },
+          {
+            "text": "bom dia"
+          },
+          {
+            "text": "eae"
+          },
+          {
+            "text": "gostaria de ajuda"
+          },
+          {
+            "text": "gostaria de saber"
+          },
+          {
+            "text": "oii"
+          },
+          {
+            "text": "ola"
+          },
+          {
+            "text": "olá bom dia"
+          },
+          {
+            "text": "pode me ajudar?"
+          },
+          {
+            "text": "Saudações"
+          },
+          {
+            "text": "tem alguem ai"
+          },
+          {
+            "text": "tudo bem?"
+          }
+        ]
+      },
+      {
+        "intent": "action_6922_intent_8940",
+        "examples": [
+          {
+            "text": "agendar demonstração"
+          },
+          {
+            "text": "agendar uma call"
+          },
+          {
+            "text": "Gostaria de agendar um reunião"
+          },
+          {
+            "text": "quero uma consultoria"
+          },
+          {
+            "text": "solicito uma demonstração"
+          }
+        ]
+      },
+      {
+        "intent": "action_8713_intent_34132",
+        "examples": [
+          {
+            "text": "controle de entrada e saída de terceiros"
+          },
+          {
+            "text": "documentos"
+          },
+          {
+            "text": "documentos de terceiros"
+          },
+          {
+            "text": "funcionários terceirizados"
+          },
+          {
+            "text": "funcionários terceiro"
+          },
+          {
+            "text": "gestão de documentos"
+          },
+          {
+            "text": "gt"
+          },
+          {
+            "text": "gtsoft"
+          },
+          {
+            "text": "prestador de serviço"
+          },
+          {
+            "text": "setor terceirizado"
+          }
+        ]
+      },
+      {
+        "intent": "action_9412_intent_42527",
+        "examples": [
+          {
+            "text": "com quem estou falando?"
+          },
+          {
+            "text": "estou falando com uma pessoa?"
+          },
+          {
+            "text": "estou falando com um robo?"
+          },
+          {
+            "text": "qual seu nome?"
+          },
+          {
+            "text": "quem é ?"
+          },
+          {
+            "text": "quem esta falando?"
+          },
+          {
+            "text": "quem fala ai?"
+          },
+          {
+            "text": "você é um humano?"
+          },
+          {
+            "text": "você é um robo?"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "entity": "action_11552_step_462_entity_44498",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "testar outra solução.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_11552_step_673_entity_19866",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_12789_step_818_entity_39380",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor.",
+            "synonyms": [
+              "quero"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_17549_step_512_entity_17463",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "1-30",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "1-40",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "1-5",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "+50",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_31963_step_109_entity_20400",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_33049_step_384_entity_17367",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Gostaria de abrir um chamado.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_3661_step_851_entity_44284",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_37396_step_467_entity_37660",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_38958_step_131_entity_15510",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_38958_step_152_entity_16597",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_4779_step_924_entity_20112",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_6922_step_547_entity_42055",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Sim, gostaria de agendar.",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "action_8713_step_886_entity_44333",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "sim, por favor",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [],
+    "data_types": [],
+    "counterexamples": [],
+    "system_settings": {
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "confirm_return": {
+            "text": ""
+          },
+          "confirm_switch": {
+            "text": ""
+          }
+        },
+        "question_steps_threshold": 2
+      },
+      "disambiguation": {
+        "prompt": "Você quis dizer:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "Nenhum dos itens acima"
+      },
+      "system_entities": {
+        "enabled": true
+      }
+    },
+    "learning_opt_out": false
+  },
+  "description": "Atendimento via chat ao cliente.",
+  "workspace_id": "a3fb902b-cca3-448e-9f76-134f650707c7",
+  "dialog_settings": {
+    "actions": true
+  }
+}
